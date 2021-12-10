@@ -52,13 +52,13 @@ let comments = [
     {title : 'lorem', body:'lorem ipsum dolo sit ameti'},
 ];
 
-let div1 = document.createElement('div');
+let divFather = document.createElement('div');
 for (const coment of comments) {
-
+    let div = document.createElement('div');
     let h3 = document.createElement('h3');
     let p = document.createElement('p');
     let btn = document.createElement('button');
-
+    let hr = document.createElement('hr');
 
     h3.innerText = coment.title;
     p.innerHTML = coment.body;
@@ -68,7 +68,7 @@ for (const coment of comments) {
         p.classList.add('pHidden');
         // btn.previousElementSibling.classList.add('pHidden');  // 2варінт який звертаєтсья до ПОПЕРЕДНЬОГО елементу перед btn
     }
-    div1.append(h3, p, btn);
-
+    div.append(h3, p, btn);
+    divFather.append(div, hr);
 }
-document.body.appendChild(div1)
+document.body.appendChild(divFather)
